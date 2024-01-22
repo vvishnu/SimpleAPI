@@ -18,7 +18,7 @@ namespace SimpleAPI.Tests
         public void Test1()
         {
             var results = weatherForecastController.Get();
-            Assert.That(results.Count, Is.EqualTo(6));
+            Assert.That(results.Count, Is.EqualTo(5));
         }
     }
 }

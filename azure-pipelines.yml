@@ -31,12 +31,12 @@ steps:
   displayName: 'Runnung test case'
 
 - task: DotNetCoreCLI@2
-  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+  displayName: 'dotnet publish --configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
   inputs:
     command: publish
     publishWebProjects: false
     projects: 'src/SimpleAPI/SimpleAPI.csproj'
-    arguments: '--configuration $(buildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    arguments: '--configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
     zipAfterPublish: true
 
 - script: dotnet build --configuration $(buildConfiguration)

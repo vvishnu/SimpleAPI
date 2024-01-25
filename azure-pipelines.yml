@@ -39,9 +39,10 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
     zipAfterPublish: true
 
-- task: Bash@3
+- task: PublishPipelineArtifact@1
   inputs:
-    targetType: 'inline'
-    script: 'env | sort'
+    targetPath: '$(System.DefaultWorkingDirectory)'
+    artifact: 'Artifiact'
+    publishLocation: 'pipeline'
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'

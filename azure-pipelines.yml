@@ -39,5 +39,12 @@ steps:
     arguments: '--configuration $(buildConfiguration) --output $(System.DefaultWorkingDirectory)'
     zipAfterPublish: true
 
+- task: Bash@3
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your commands here
+      
+      env | sort
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'

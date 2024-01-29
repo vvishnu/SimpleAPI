@@ -19,7 +19,7 @@ namespace SimpleAPI.Tests
         {
             var results = weatherForecastController.Get();
 
-            Assert.That(results.Count, Is.EqualTo(10));
+            Assert.That(results.Count, Is.EqualTo(11));
         }
     }
 }
